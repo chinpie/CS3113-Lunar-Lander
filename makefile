@@ -1,5 +1,5 @@
 # Source and target
-SRCS = main.cpp
+SRCS = main.cpp CS3113/Entity.cpp
 TARGET = raylib_app
 
 # Add the CS3113 library if it exists

@@ -165,6 +165,10 @@ public:
     {
         mSpeed = newSpeed;
     }
+    void setVelocity(Vector2 newVelocity)
+    {
+        mVelocity = newVelocity;
+    }
     void setFrameSpeed(int newSpeed)
     {
         mFrameSpeed = newSpeed;
@@ -172,6 +176,10 @@ public:
     void setJumpingPower(float newJumpingPower)
     {
         mJumpingPower = newJumpingPower;
+    }
+    void setDirection(Direction newDirection)
+    {
+        mDirection = newDirection;
     }
     void setAngle(float newAngle)
     {

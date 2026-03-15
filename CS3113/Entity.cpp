@@ -188,7 +188,7 @@ void Entity::update(float deltaTime, Entity *collidableEntities, int collisionCh
 
     resetColliderFlags();
 
-    mVelocity.x = mMovement.x * mSpeed;
+    // mVelocity.x = mMovement.x * mSpeed;
 
     mVelocity.x += mAcceleration.x * deltaTime;
     mVelocity.y += mAcceleration.y * deltaTime;
@@ -209,7 +209,9 @@ void Entity::update(float deltaTime, Entity *collidableEntities, int collisionCh
     mPosition.x += mVelocity.x * deltaTime;
     checkCollisionX(collidableEntities, collisionCheckCount);
 
-    if (mTextureType == ATLAS && GetLength(mMovement) != 0 && mIsCollidingBottom)
+    // if (mTextureType == ATLAS && GetLength(mMovement) != 0 && mIsCollidingBottom)
+    //     animate(deltaTime);
+    if (mTextureType == ATLAS && (GetLength(mAcceleration) != 0 || GetLength(mVelocity) != 0))
         animate(deltaTime);
 }
 
@@ -261,5 +263,5 @@ void Entity::render()
         textureArea, destinationArea, originOffset,
         mAngle, WHITE);
 
-    displayCollider();
+    // displayCollider();
 }
